@@ -6,15 +6,20 @@
 
 // }
 
+var w
+var h
+
 function setup() {
 
 
 	// var canvas = createCanvas(windowWidth, windowHeight);
 	// canvas.parent('game');
 
-	createCanvas(windowWidth,windowHeight)
-
+	createCanvas(windowWidth, windowHeight)
+	// translate(width / 2, height)
 	jumpy = new tile();
+	w = width
+	h = height
 }
 
 
@@ -24,40 +29,26 @@ function setup() {
 
 function draw() {
 
-	
+
 	background(51);
-	translate(width / 2, height)
+	push()
+	translate(width / 2, height / 2)
 	jumpy.draw();
+	pop();
+	// jumpy.update()
 	// jumpy.update();
 
 }
 
+// function update() {
 
+// }
 
-
-
-
-function displayText(data, lox, loy, clr, style) {
-
-	txt = "" + data;
-	if (clr) {
-		fill(clr);
-	} else {
-		fill("black")
+function keyPressed() {
+	if (keyCode == LEFT_ARROW) {
+		jumpy.setvel(-1)
+	} else if (keyCode == RIGHT_ARROW) {
+		jumpy.setvel(1)
 	}
-	if (style) {
-		textStyle(style)
-	} else {
-		textStyle(NORMAL)
-	}
-
-
-	stroke(0)
-	textSize(40);
-	x = lox
-	y = loy
-	textAlign(CENTER)
-	text(txt, lox, loy);
-
-
+	return false; // prevent default
 }
