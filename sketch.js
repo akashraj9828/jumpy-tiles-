@@ -29,7 +29,7 @@ function setup() {
 
 function draw() {
 
-
+	// scale(0.5)
 	background(51);
 	push()
 	translate(width / 2, height / 2)
