@@ -6,7 +6,7 @@ function tile() {
     this.prevx=0;
     this.y = 0
     this.prevy=0;
-    this.g=0.2
+    this.g=3
     this.gravity=this.g
     this.accx=0
     this.accy=0
@@ -39,7 +39,7 @@ function tile() {
        
      // rect(this.x, this.y, 40, 40)
      imageMode(CENTER);
-     image(gif,this.x,this.y, 80, 80);
+     ellipse(this.x,this.y, 80, 80);
        
      // pop()
         // this.prevx=this.x
