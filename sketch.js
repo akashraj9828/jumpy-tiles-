@@ -14,6 +14,7 @@ function setup() {
 
 	// var canvas = createCanvas(windowWidth, windowHeight);
 	// canvas.parent('game');
+	gif=loadGif("flappy.gif")
 
 	createCanvas(windowWidth, windowHeight)
 	// translate(width / 2, height)
@@ -46,9 +47,9 @@ function draw() {
 
 function keyPressed() {
 	if (keyCode == LEFT_ARROW) {
-		jumpy.setvel(-1)
+		jumpy.dir=-1
 	} else if (keyCode == RIGHT_ARROW) {
-		jumpy.setvel(1)
+		jumpy.dir=1
 	}
 	return false; // prevent default
 }
